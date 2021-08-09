@@ -17,6 +17,8 @@ COPY ./Gemfile* ./
 
 RUN gem install bundler && bundle install
 
+RUN bundle exec rails webpacker:install && bundle exec rails webpacker:compile
+
 COPY . ./
 
 CMD bundle exec rails s -p 3000 -b '0.0.0.0'
