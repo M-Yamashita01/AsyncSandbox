@@ -4,6 +4,7 @@ RUN apk update && \
     apk --no-cache add bash \
                        build-base \
                        curl \
+                       libffi-dev\
                        mysql-dev \
                        nodejs \
                        npm \
@@ -15,7 +16,8 @@ WORKDIR /app
 
 COPY ./Gemfile* ./
 
-RUN gem install bundler && bundle install
+# RUN gem install bundler && bundle install
+RUN gem install bundler && bundle install --path vendor/bundle
 
 RUN bundle exec rails webpacker:install && bundle exec rails webpacker:compile
 
