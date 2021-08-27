@@ -4,6 +4,14 @@ class User < ApplicationRecord
     puts '----send_message---'
   end
 
+  def before
+    puts '----before---'
+  end
+
+  def success
+    puts '----success---'
+  end
+
   def self.send_delay_message
     user = new
     user.save!

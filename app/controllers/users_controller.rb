@@ -4,10 +4,9 @@ class UsersController < ApplicationController
   # GET /users or /users.json
   def index
     @users = User.all
-
     user = User.new
     user.save
-    user.delay.send_message
+    user.delay(priority: 10, run_at: Time.now + 10).send_message
   end
 
   # GET /users/1 or /users/1.json
