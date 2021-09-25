@@ -10,27 +10,27 @@ services:
     ports:
       - '3306:3306'
 
-  rails:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - ./:/app
-    ports:
-      - '3000:3000'
-    depends_on:
-      - mysql
+  # rails:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     - ./:/app
+  #   ports:
+  #     - '3000:3000'
+  #   depends_on:
+  #     - mysql
 
-  rails-bg:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - ./:/app
-    depends_on:
-      - mysql
-    command: bundle exec rails jobs:work
-
+#   rails-bg:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     volumes:
+#       - ./:/app
+#     depends_on:
+#       - mysql
+#     command: bundle exec rails jobs:work
+#
 volumes:
   mysql-data:
     driver: local

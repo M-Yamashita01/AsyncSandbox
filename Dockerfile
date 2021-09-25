@@ -16,8 +16,7 @@ WORKDIR /app
 
 COPY ./Gemfile* ./
 
-# RUN gem install bundler && bundle install
-RUN gem install bundler && bundle install --path vendor/bundle
+RUN gem install bundler && bundle install
 
 RUN bundle exec rails webpacker:install && bundle exec rails webpacker:compile
 
