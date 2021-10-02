@@ -8,7 +8,7 @@ gem 'daemons'
 gem 'delayed_job_active_record'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.0.4'
+gem 'rails', '~> 6.1.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -37,6 +37,7 @@ gem 'sassc', '2.4.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'debug', '>=1.0.0'
   gem 'pry-byebug'
   gem 'pry-rails'
 end
